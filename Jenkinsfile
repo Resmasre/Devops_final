@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "surethan37/final_task"
+        IMAGE_NAME = "resmasre/project"
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Surethan-S/DevOps_Final.git'
+                git branch: 'main', url: 'https://github.com/Resmasre/Project.git'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 sh '''
-                docker login -u surethan37 -p 55665566@S37
+                docker login -u resmasre -p reshmasrep
                 docker push $IMAGE_NAME
                 '''
             }
