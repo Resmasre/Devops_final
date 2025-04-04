@@ -22,8 +22,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                docker build -t task7 .
-                docker tag task7 $IMAGE_NAME
+                docker build -t task3 .
+                docker tag task3 $IMAGE_NAME
                 '''
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 sh '''
-                docker login -u resmasre -p reshmasrep
+                docker login -u resmasre -p Reshmasrep
                 docker push $IMAGE_NAME
                 '''
             }
